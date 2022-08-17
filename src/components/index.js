@@ -1,8 +1,8 @@
-import SideMenu from "./SideMenu";
-import MainComponent from "./MainComponent";
-import SideInfo from "./SideInfo";
-import Banner from "./Banner";
-import Header from "./Header";
-import Row from "./Row";
+import LeftBlock from "@/components/layout/LeftBlock"
+import MainComponent from "@/components/layout/MainComponent";
+import RightBlock from "@/components/layout/RightBlock";
+import Banner from "@/components/layout/Banner";
+import Header from "@/components/layout/Header";
+import Row from "@/components/layout/Row";
 
-export { SideInfo, SideMenu, MainComponent, Banner, Header, Row };
+export { RightBlock, LeftBlock, MainComponent, Banner, Header, Row };

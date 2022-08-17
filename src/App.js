@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HomeContainer } from "./containers";
+import DefaultLayout from "./components/layout/DefaultLayout";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomeContainer />} />
+        <Route path="/" element={<DefaultLayout />} />
       </Routes>
     </Router>
   );
