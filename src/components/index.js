@@ -1,8 +1,8 @@
-import LeftBlock from "@/components/layout/LeftBlock"
-import MainComponent from "@/components/layout/MainComponent";
-import RightBlock from "@/components/layout/RightBlock";
-import Banner from "@/components/layout/Banner";
-import Header from "@/components/layout/Header";
-import Row from "@/components/layout/Row";
+import LeftBlock from "./layout/LeftBlock"
+import MainComponent from "./layout/MainComponent";
+import RightBlock from "./layout/RightBlock";
+import Banner from "./layout/Banner";
+import Header from "./layout/Header";
+import Row from "./layout/Row";
 
 export { RightBlock, LeftBlock, MainComponent, Banner, Header, Row };

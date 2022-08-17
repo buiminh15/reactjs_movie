@@ -1,5 +1,5 @@
 import React from "react";
-import { MainComponent, LeftBlock, LeftBlock } from "../components";
+import { MainComponent, LeftBlock, RightBlock } from "../components";
 
 function HomeContainer() {
   return (
@@ -7,7 +7,7 @@ function HomeContainer() {
       <div className="grid grid-cols-1 md:grid-cols-12">
         <LeftBlock />
         <MainComponent />
-        <LeftBlock />
+        <RightBlock />
       </div>
     </div>
   );

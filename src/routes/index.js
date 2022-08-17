@@ -1,7 +1,7 @@
-import { RouteEnum } from "configuration/route-config";
 import { lazy } from "react";
+import { RouteEnum } from "../configuration/route-config";
 
-const Home = lazy(() => import("@/containers/HomeContainer"));
+const Home = lazy(() => import("../containers/HomeContainer"));
 
 const routes = [
   {
