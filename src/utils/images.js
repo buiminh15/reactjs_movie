@@ -1,3 +1,3 @@
-import logo from "../../public/assets/images/moon.jpg";
+import logo from "../assets/images/moon.jpg";
 
-export { logo };
+export {logo}
