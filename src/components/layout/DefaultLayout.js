@@ -1,5 +1,5 @@
-import { RouteEnum } from "@/configuration/route-config";
-import { routes } from "@/routes";
+import { RouteEnum } from "../../configuration/route-config";
+import { routes } from "../../routes";
 import React, { Suspense } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
