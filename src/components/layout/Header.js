@@ -1,10 +1,19 @@
 import React from "react";
-import { logo } from "../../utils/images";
+import { CustomIcon, Logo } from "../common";
+import { FiMenu } from "react-icons/fi";
 
 function Header() {
   return (
     <div className="h-10 my-5">
-      <img src={logo} className="w-10 h-10 rounded-full object-cover" />
+      <div className="flex items-center justify-between">
+       <Logo />
+        <CustomIcon 
+          element={<FiMenu />}
+          providerStyle={{ className: 'text-3xl cursor-pointer' }}
+        />
+        
+      </div>
+
     </div>
   );
 }
