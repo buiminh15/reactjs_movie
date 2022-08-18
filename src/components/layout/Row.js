@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Row() {
+function Row({title="test"}) {
   return (
-    <div>Row</div>
+    <div className=''>
+      <div>{title}</div>
+    </div>
   )
 }
 
