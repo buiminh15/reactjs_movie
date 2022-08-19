@@ -44,7 +44,7 @@ const BannerImage = ({
           <svg
             stroke="currentColor"
             fill="currentColor"
-            stroke-width="0"
+            strokeƯidth="0"
             viewBox="0 0 16 16"
             className="text-white"
             height="35"
@@ -59,13 +59,13 @@ const BannerImage = ({
           <SwiperButtonPrev>
             <CustomIcon
               element={<FiChevronLeft />}
-              providerStyle={{ className: "text-3xl ", color: "#fff" }}
+              providerStyle={{ className: "text-3xl text-white" }}
             />
           </SwiperButtonPrev>
           <SwiperButtonNext>
             <CustomIcon
               element={<FiChevronRight />}
-              providerStyle={{ className: "text-3xl", color: "#fff" }}
+              providerStyle={{ className: "text-3xl text-white" }}
             />
           </SwiperButtonNext>
         </div>

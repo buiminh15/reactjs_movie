@@ -28,20 +28,21 @@ html {
   background: hsl(240, 1%, 29%);
 }
 
-.tw-black-backdrop-2 {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(179, 179, 193, 0) 7%,
-    rgba(107, 107, 115, 0) 93%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+.clr-gray {
+  color: #d1d5db;
 }
 
-.tw-black-backdrop-3 {
-  background: linear-gradient(65deg, rgba(39, 42, 55, 1) 70%, transparent 140%);
+.clr-gray-500 {
+  color: #989898;
 }
 
+.clr-blue-500 {
+  color: #5179ff;
+}
+
+.border-blue {
+  border-color: #5179ff;
+}
 
 /* CUSTOM SCROLLBAR*/
 ::-webkit-scrollbar {

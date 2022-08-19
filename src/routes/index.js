@@ -9,6 +9,16 @@ const routes = [
     title: "home",
     element: <Home />,
   },
+  {
+    path: RouteEnum.explore,
+    title: "explore",
+    element: <Home />,
+  },
+  {
+    path: RouteEnum.search,
+    title: "search",
+    element: <Home />,
+  },
 ];
 
 export { routes };

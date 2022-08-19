@@ -17,7 +17,7 @@ const RowImage = ({ link, imageLink, movieTitle, rating }) => {
           {rating}
           <CustomIcon
             element={<FiStar />}
-            providerStyle={{ className: "text-sm ", color: "#fff" }}
+            providerStyle={{ className: "text-sm " }}
           />
         </span>
 
@@ -27,7 +27,7 @@ const RowImage = ({ link, imageLink, movieTitle, rating }) => {
           className="h-[85%] object-cover rounded-tl rounded-tr"
         />
         <div className="h-[15%] grid place-items-center">
-          <h3 className="text-[#d1d5db] text-center capitalize duration-100 group-hover:text-white">
+          <h3 className="clr-gray text-center capitalize duration-100 group-hover:text-white">
             {movieTitle}
           </h3>
         </div>
@@ -51,7 +51,7 @@ function SwiperRow({ data }) {
         <SwiperButtonPrev>
           <CustomIcon
             element={<FiChevronLeft />}
-            providerStyle={{ className: "text-4xl ", color: "#fff" }}
+            providerStyle={{ className: "text-4xl text-white" }}
           />
         </SwiperButtonPrev>
       </div>
@@ -59,7 +59,7 @@ function SwiperRow({ data }) {
         <SwiperButtonNext>
           <CustomIcon
             element={<FiChevronRight />}
-            providerStyle={{ className: "text-4xl", color: "#fff" }}
+            providerStyle={{ className: "text-4xl text-white" }}
           />
         </SwiperButtonNext>
       </div>

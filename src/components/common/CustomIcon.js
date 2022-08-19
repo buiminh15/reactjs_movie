@@ -1,12 +1,12 @@
 import React from "react";
 import { IconContext } from "react-icons";
-function CustomIcon({element, providerStyle, children}) {
+function CustomIcon({element, providerStyle, handleClick, children}) {
   return (
     <>
       <IconContext.Provider
-        value={{ color: "#989898", ...providerStyle }}
+        value={providerStyle }
       >
-        <div>
+        <div onClick={handleClick}>
           {element ? element : children}
         </div>
       </IconContext.Provider>
