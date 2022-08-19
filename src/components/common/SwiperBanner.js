@@ -44,7 +44,7 @@ const BannerImage = ({
           <svg
             stroke="currentColor"
             fill="currentColor"
-            strokeƯidth="0"
+            strokeWidth="0"
             viewBox="0 0 16 16"
             className="text-white"
             height="35"
