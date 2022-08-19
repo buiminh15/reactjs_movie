@@ -1,13 +1,14 @@
 import React from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { Lazy, Navigation, Autoplay } from "swiper";
+import { Autoplay, Lazy, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Test, Test1, Test2 } from "../../utils/images";
 import { SwiperButtonNext, SwiperButtonPrev } from "../styles";
 import CustomIcon from "./CustomIcon";
+
 
 const BannerImage = ({
   movieLink,
@@ -45,7 +46,7 @@ const BannerImage = ({
             fill="currentColor"
             stroke-width="0"
             viewBox="0 0 16 16"
-            className="text-white ml-2"
+            className="text-white"
             height="35"
             width="35"
             xmlns="http://www.w3.org/2000/svg"
@@ -53,12 +54,27 @@ const BannerImage = ({
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
           </svg>
         </div>
+        
+        <div className=" top-0 z-10 flex mt-2 ml-2 sm:absolute">
+          <SwiperButtonPrev>
+            <CustomIcon
+              element={<FiChevronLeft />}
+              providerStyle={{ className: "text-3xl ", color: "#fff" }}
+            />
+          </SwiperButtonPrev>
+          <SwiperButtonNext>
+            <CustomIcon
+              element={<FiChevronRight />}
+              providerStyle={{ className: "text-3xl", color: "#fff" }}
+            />
+          </SwiperButtonNext>
+        </div>
       </div>
     </Link>
   );
 };
 
-function SwiperMovie() {
+function SwiperBanner() {
   return (
     <>
       <Swiper
@@ -82,23 +98,9 @@ function SwiperMovie() {
             <BannerImage movieLink={"#"} imgUrl={img} />
           </SwiperSlide>
         ))}
-        <div className=" top-0 z-10 flex mt-2 ml-2 sm:absolute">
-          <SwiperButtonPrev>
-            <CustomIcon
-              element={<FiChevronLeft />}
-              providerStyle={{ className: "text-3xl ", color: "#fff" }}
-            />
-          </SwiperButtonPrev>
-          <SwiperButtonNext>
-            <CustomIcon
-              element={<FiChevronRight />}
-              providerStyle={{ className: "text-3xl", color: "#fff" }}
-            />
-          </SwiperButtonNext>
-        </div>
       </Swiper>
     </>
   );
 }
 
-export default SwiperMovie;
+export default SwiperBanner;

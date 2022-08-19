@@ -11,8 +11,63 @@
 }
 
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  @apply overflow-x-hidden md:overflow-x-visible;
+}
+
+.bg-primary {
+  background: #1c1c1e;
+}
+
+.bg-dark {
+  background: hsl(240, 1%, 29%);
+}
+
+.tw-black-backdrop-2 {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(179, 179, 193, 0) 7%,
+    rgba(107, 107, 115, 0) 93%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.tw-black-backdrop-3 {
+  background: linear-gradient(65deg, rgba(39, 42, 55, 1) 70%, transparent 140%);
+}
+
+
+/* CUSTOM SCROLLBAR*/
+::-webkit-scrollbar {
+  @apply w-[10px] h-[10px];
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-button {
+  @apply hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#111] rounded-full hover:bg-[#0e0d0d] transition duration-300;
+}
+
+select:focus {
+  outline: none !important;
+}
+
+/* CUSTOM INPUT BACKGROUND WHEN AUTOFILL FORM */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #49494b inset !important;
 }

@@ -9,7 +9,7 @@ function DefaultLayout() {
   //   return <Navigate to={RouteEnum.home} replace />;
   // }
   return (
-    <div className="min-h-screen bg-[#1c1c1e]">
+    <div className="min-h-screen bg-primary">
       <div className="grid grid-cols-1 md:grid-cols-12">
         <Suspense fallback={null}>
           <Routes>
