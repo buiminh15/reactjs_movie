@@ -14,7 +14,7 @@ function MenuItem({ icon, title, path }) {
         }`}
       >
         <CustomIcon element={icon} providerStyle={{ className: `text-2xl` }} />
-        <span className="text-lg">{title}</span>
+        <span className="text-lg capitalize">{title}</span>
       </Link>
     </li>
   );

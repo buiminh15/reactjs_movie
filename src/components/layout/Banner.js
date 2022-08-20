@@ -20,7 +20,7 @@ function Banner() {
           <img
             src={defaultAvatar}
             alt="anynomous"
-            className="w-7 h-7 rounded-full object-cover"
+            className="w-7 h-7 rounded-full object-cover "
             referrerPolicy="no-referrer"
           />
         </div>
