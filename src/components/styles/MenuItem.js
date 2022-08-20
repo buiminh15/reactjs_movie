@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { CustomIcon } from "../common";
 
-function MenuItem({ element, title = "Home", path }) {
+function MenuItem({ icon, title, path }) {
   const { pathname } = useLocation();
 
   return (
@@ -13,10 +13,7 @@ function MenuItem({ element, title = "Home", path }) {
           pathname === path ? "clr-blue-500 border-r-4" : "clr-gray"
         }`}
       >
-        <CustomIcon
-          element={element}
-          providerStyle={{ className: `text-2xl` }}
-        />
+        <CustomIcon element={icon} providerStyle={{ className: `text-2xl` }} />
         <span className="text-lg">{title}</span>
       </Link>
     </li>
