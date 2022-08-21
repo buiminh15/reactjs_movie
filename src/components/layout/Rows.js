@@ -1,9 +1,9 @@
-import React from "react";
-import Row from "./Row";
+import React from 'react';
+import Row from './Row';
 
 function Rows() {
   return (
-    <ul className="flex flex-col gap-10 mt-6">
+    <ul className="mt-6 flex flex-col gap-10">
       {Array(3)
         .fill(0)
         .map((_, index) => (

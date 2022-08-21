@@ -1,14 +1,12 @@
-import React from "react";
-import { SwiperRow } from "../common";
+import React from 'react';
+import { SwiperRow } from '../common';
 
-function Row({ title = "test", data }) {
+function Row({ title = 'test', data }) {
   return (
-    <div className="px-[4vw] overflow-hidden">
-      <h2 className="text-white text-2xl capitalize tracking-wide mb-3">
-        {title}
-      </h2>
-      <div className="h-fit relative">
-        <SwiperRow data={data}/>
+    <div className="overflow-hidden px-[4vw]">
+      <h2 className="mb-3 text-2xl capitalize tracking-wide text-white">{title}</h2>
+      <div className="relative h-fit">
+        <SwiperRow data={data} />
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { TOAST_MESSAGES } from "../../constants";
-import { userStorage } from "../../utils/storage";
-import { CustomIcon } from "../common";
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { TOAST_MESSAGES } from '../../constants';
+import { userStorage } from '../../utils/storage';
+import { CustomIcon } from '../common';
 
 function MenuItem({ icon, title, path, auth }) {
   const { pathname } = useLocation();
@@ -21,8 +21,8 @@ function MenuItem({ icon, title, path, auth }) {
   return (
     <li className="mb-3" onClick={handleNavigate}>
       <div
-        className={`flex w-full h-8 gap-3 cursor-pointer border-blue ${
-          pathname === path ? "clr-blue-500 border-r-4" : "clr-gray"
+        className={`border-blue flex h-8 w-full cursor-pointer gap-3 ${
+          pathname === path ? 'clr-blue-500 border-r-4' : 'clr-gray'
         }`}
       >
         <CustomIcon element={icon} providerStyle={{ className: `text-2xl` }} />

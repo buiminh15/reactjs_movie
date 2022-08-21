@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function LeftBlock() {
-  return (
-    <div className='hidden md:flex md:col-span-2 h-screen'>LeftBlock</div>
-  )
+  return <div className="hidden h-screen md:col-span-2 md:flex">LeftBlock</div>;
 }
 
-export default LeftBlock
+export default LeftBlock;

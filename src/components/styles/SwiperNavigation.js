@@ -1,5 +1,5 @@
-import React from "react";
-import { useSwiper } from "swiper/react";
+import React from 'react';
+import { useSwiper } from 'swiper/react';
 
 const SwiperButtonNext = ({ children }) => {
   const swiper = useSwiper();

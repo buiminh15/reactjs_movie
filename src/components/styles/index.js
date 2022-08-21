@@ -1,2 +1,2 @@
-export { SwiperButtonNext, SwiperButtonPrev } from "./SwiperNavigation";
-export { TextInput } from "./Inputs";
+export { SwiperButtonNext, SwiperButtonPrev } from './SwiperNavigation';
+export { TextInput } from './Inputs';

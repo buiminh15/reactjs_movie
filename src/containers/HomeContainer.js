@@ -1,5 +1,5 @@
-import React from "react";
-import { MainComponent, LeftBlock, RightBlock } from "../components";
+import React from 'react';
+import { MainComponent, LeftBlock, RightBlock } from '../components';
 
 function HomeContainer() {
   return (

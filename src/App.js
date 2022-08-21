@@ -1,8 +1,8 @@
-import { Suspense } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import DefaultLayout from "./components/layout/DefaultLayout";
-import { routes } from "./routes";
-import { ToastContainer } from "react-toastify";
+import { Suspense } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import DefaultLayout from './components/layout/DefaultLayout';
+import { routes } from './routes';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -14,7 +14,9 @@ function App() {
               {...rest}
               key={id}
               element={
-                <Suspense fallback={<div className="text-white">Loading...</div>}>{Element}</Suspense>
+                <Suspense fallback={<div className="text-white">Loading...</div>}>
+                  {Element}
+                </Suspense>
               }
             />
           ))}

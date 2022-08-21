@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function RightBlock() {
-  return (
-    <div className='hidden md:flex md:col-span-2'>RightBlock</div>
-  )
+  return <div className="hidden md:col-span-2 md:flex">RightBlock</div>;
 }
 
-export default RightBlock
+export default RightBlock;
