@@ -8,12 +8,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-const schema = yup
-  .object({
-    firstName: yup.string().required(),
-    lastName: yup.string().required()
-  })
-  .required();
+const SignupSchema = yup.object().shape({
+  firstName: yup.string().required(),
+  lastName: yup.string().required()
+});
 
 const SignIn = () => {
   return <div>Sign in</div>;
@@ -25,7 +23,7 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors }
   } = useForm({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(SignupSchema)
   });
   const onSubmit = (data) => console.log(data);
   return (
@@ -43,16 +41,24 @@ const SignUp = () => {
           name="lastName"
           {...register('lastName')}
           icon={<FaRegUserCircle />}
+          errors={errors}
         />
-        <Input label="Email" name="email" {...register('email')} icon={<FiMail />} />
+        <Input
+          label="Email"
+          name="email"
+          {...register('email')}
+          icon={<FiMail />}
+          errors={errors}
+        />
         <Input
           label="Password"
           name="password"
           {...register('password')}
           icon={<RiLockPasswordLine />}
+          errors={errors}
         />
       </Row>
-      <input type="submit" value="submit" />
+      <input type="submit" value="submit" className="mt-6 bg-blue-500 px-4 py-2 text-white" />
     </form>
   );
 };

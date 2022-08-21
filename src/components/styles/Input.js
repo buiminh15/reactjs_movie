@@ -2,6 +2,7 @@ import { CustomIcon } from '../common';
 
 const Input = ({ label, name, type = 'text', icon, errors, ...rest }) => {
   console.log('ERRORS::: ', name && errors?.[name]);
+  console.log('ERRORS::: ', name);
   return (
     <div className="relative text-white">
       <div>
@@ -24,6 +25,9 @@ const Input = ({ label, name, type = 'text', icon, errors, ...rest }) => {
           {label}
         </label>
       </div>
+      {
+        errors?.[name]?.message && <span className='text-sm text-red-500 mt-2'>{errors?.[name]?.message}</span> 
+      }
     </div>
   );
 };
