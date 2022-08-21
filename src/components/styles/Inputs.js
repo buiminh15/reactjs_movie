@@ -1,15 +1,15 @@
 import { FaRegUserCircle } from 'react-icons/fa';
 import { CustomIcon } from '../common';
 
-const TextInput = ({ id, label = 'test 11111', value, handleChange }) => {
+const TextInput = ({ label = 'placeholder', name, type = 'text', ...rest }) => {
   return (
-    <div className="group relative m-10 inline-flex text-white">
+    <div className="relative m-10 text-white">
       <input
-        type="text"
-        id={id}
-        className="rounded border border-gray-500 bg-transparent px-4 py-2 outline-none"
-        value={value}
-        onChange={handleChange}
+        {...rest}
+        id={name}
+        type={type}
+        placeholder=" "
+        className="block w-full appearance-none rounded border border-gray-500 bg-transparent px-4 py-2 outline-none "
       />
       <CustomIcon
         providerStyle={{
@@ -17,11 +17,9 @@ const TextInput = ({ id, label = 'test 11111', value, handleChange }) => {
         }}
         element={<FaRegUserCircle />}
       />
-
       <label
-        htmlFor={id}
-        className="absolute-y-center clr-gray-500 bg-primary pointer-events-none absolute left-4 select-none duration-300 group-focus-within:top-0 group-focus-within:left-6"
-      >
+        htmlFor={name}
+        className="absolute-y-center bg-primary clr-gray-500 pointer-events-none left-4 select-none duration-300">
         {label}
       </label>
     </div>

@@ -63,6 +63,15 @@ html {
   border-color: #5179ff;
 }
 
+/* INPUT */
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  @apply transform;
+  @apply scale-90;
+  @apply -top-3;
+}
+
 /* CUSTOM SCROLLBAR*/
 ::-webkit-scrollbar {
   @apply h-[10px] w-[10px];
