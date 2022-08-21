@@ -1,5 +1,9 @@
 import React from 'react';
-import { TextInput } from '../styles';
+import { Row } from '../common';
+import { Input } from '../styles';
+import { FaRegUserCircle } from 'react-icons/fa';
+import { FiMail } from "react-icons/fi";
+import { RiLockPasswordLine } from "react-icons/ri";
 
 const SignIn = () => {
   return <div>Sign in</div>;
@@ -8,7 +12,11 @@ const SignIn = () => {
 const SignUp = () => {
   return (
     <div>
-      <TextInput />
+      <Row>
+        <Input label='First name' icon={<FaRegUserCircle />} />
+        <Input label='Last name' icon={<FiMail />} />
+        <Input label='First name' icon={<RiLockPasswordLine />} />
+      </Row>
     </div>
   );
 };
