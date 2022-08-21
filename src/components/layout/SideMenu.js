@@ -10,13 +10,14 @@ function SideMenu() {
           <li key={id}>
             <h2 className={`text-white uppercase text-xl  ${index === 0 ? '-mt-6' : 'mt-12'}`}>{title}</h2>
             <ul className="ml-4 mt-8 flex flex-col gap-3">
-              {data.map(({ id, icon, title, link, path }) => (
+              {data.map(({ id, icon, title, link, path, auth }) => (
                   <MenuItem
                     key={id}
                     icon={icon}
                     title={title}
                     link={link}
                     path={path}
+                    auth={auth}
                   />
               ))}
             </ul>

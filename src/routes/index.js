@@ -13,6 +13,7 @@ import {
 
 const Home = lazy(() => import("../containers/HomeContainer"));
 const Search = lazy(() => import("../containers/SearchContainer"));
+const Auth = lazy(() => import("../containers/AuthContainer"));
 
 const MENU = [
   {
@@ -45,6 +46,7 @@ const PERSONAL = [
     title: "bookmarked",
     icon: <FiBookmark />,
     element: <Home />,
+    auth: true,
   },
   {
     id: uuidv4(),
@@ -52,6 +54,7 @@ const PERSONAL = [
     title: "history",
     icon: <FiClock />,
     element: <Home />,
+    auth: true,
   },
 ];
 
@@ -62,13 +65,14 @@ const GENERAL = [
     title: "profile",
     icon: <FiUser />,
     element: <Home />,
+    auth: true,
   },
   {
     id: uuidv4(),
     path: RouteEnum.login,
     title: "login",
     icon: <FiLogIn />,
-    element: <Home />,
+    element: <Auth />,
   },
 ];
 
@@ -90,6 +94,6 @@ const SIDE_MENU = [
   },
 ];
 
-const routes = SIDE_MENU.map(item => item.data).flat();
+const routes = SIDE_MENU.map((item) => item.data).flat();
 
 export { routes, SIDE_MENU };
