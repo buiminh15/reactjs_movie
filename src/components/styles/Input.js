@@ -1,17 +1,16 @@
 import { CustomIcon } from '../common';
 
-const Input = ({ label, name, type = 'text', icon, errors, ...rest }) => {
-  console.log('ERRORS::: ', name && errors?.[name]);
-  console.log('ERRORS::: ', name);
+const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) => {
   return (
     <div className="relative text-white">
       <div>
         <input
           {...rest}
+          {...register(name)}
           id={name}
           type={type}
           placeholder=" "
-          className="block w-full appearance-none rounded border border-gray-500 bg-transparent px-4 py-2 outline-none "
+          className="block w-full appearance-none rounded border active:bg-transparent border-gray-500 bg-transparent px-4 py-2 outline-none "
         />
         <CustomIcon
           providerStyle={{
@@ -26,7 +25,7 @@ const Input = ({ label, name, type = 'text', icon, errors, ...rest }) => {
         </label>
       </div>
       {
-        errors?.[name]?.message && <span className='text-sm text-red-500 mt-2'>{errors?.[name]?.message}</span> 
+        errors?.[name]?.message && <span className='text-xs text-red-500 mt-2 absolute -bottom-5'>{errors?.[name]?.message}</span> 
       }
     </div>
   );

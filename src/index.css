@@ -56,7 +56,11 @@ html {
 }
 
 .clr-blue-500 {
-  color: #5179ff;
+  color: hsl(226, 100%, 66%);
+}
+
+.clr-blue-600 {
+  color: hsl(226, 100%, 60%);
 }
 
 .border-blue {
@@ -98,5 +102,9 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #49494b inset !important;
+  -webkit-box-shadow: 0 0 0 30px #1c1c1e inset !important;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: #989898 !important;
 }
