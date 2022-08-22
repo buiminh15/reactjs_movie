@@ -20,15 +20,13 @@ const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) 
         />
         <label
           htmlFor={name}
-          className="absolute-y-center bg-primary clr-gray-500 pointer-events-none left-2 select-none px-2 duration-300"
+          className="absolute-y-center clr-gray-500 pointer-events-none left-2 select-none px-2 duration-300 "
         >
           {label}
         </label>
       </div>
       {errors?.[name]?.message && (
-        <span className="absolute -bottom-5 mt-2 text-xs text-red-500">
-          {errors?.[name]?.message}
-        </span>
+        <span className="absolute -bottom-5 mt-2 text-xs text-red-500">{errors[name].message}</span>
       )}
     </div>
   );
