@@ -41,7 +41,7 @@ const SignIn = ({ handleAuthPage }) => {
     console.log('tete:: ', data);
   };
   return (
-    <div className="max-w-[600px] w-full">
+    <div className="w-full max-w-[600px]">
       <h2 className="clr-blue-500 my-4 text-center text-4xl font-extrabold capitalize">
         sign in to moonee
       </h2>
@@ -52,14 +52,7 @@ const SignIn = ({ handleAuthPage }) => {
       <p className="clr-gray-500 my-5 text-center">or use your email account:</p>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
         <Row colNum={1} rowStyles="mt-8">
-          <Input
-            label="Email"
-            name="email"
-            type="email"
-            register={register}
-            icon={<FiMail />}
-            errors={errors}
-          />
+          <Input label="Email" name="email" register={register} icon={<FiMail />} errors={errors} />
         </Row>
 
         <Row colNum={1} rowStyles="mt-8">
@@ -82,7 +75,8 @@ const SignIn = ({ handleAuthPage }) => {
         Not a member?{' '}
         <span
           className="cursor-pointer border-b-2 border-blue-600 capitalize text-blue-600"
-          onClick={() => handleAuthPage(false)}>
+          onClick={() => handleAuthPage(false)}
+        >
           sign up
         </span>
       </p>
@@ -160,7 +154,8 @@ const SignUp = ({ handleAuthPage }) => {
         Already a member?{' '}
         <span
           className="cursor-pointer border-b-2 border-blue-600 capitalize text-blue-600"
-          onClick={() => handleAuthPage(true)}>
+          onClick={() => handleAuthPage(true)}
+        >
           sign in
         </span>
       </p>

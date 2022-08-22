@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function AuthRoute({children}) {
+function AuthRoute({ children }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -14,11 +14,7 @@ function AuthRoute({children}) {
     }
     navigate(path);
   };
-  return (
-    <div>
-      {children}
-    </div>
-  )
+  return <div>{children}</div>;
 }
 
-export default AuthRoute
+export default AuthRoute;
