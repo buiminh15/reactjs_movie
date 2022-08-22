@@ -5,3 +5,4 @@ export { default as SwiperRow } from './SwiperRow';
 export { default as Row } from './Row';
 export { default as Spinner } from './Spinner';
 export { default as Accordion } from './Accordion';
+export { default as ErrorFallback } from './ErrorFallback';

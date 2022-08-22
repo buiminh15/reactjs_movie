@@ -1,4 +1,5 @@
-import { CustomIcon } from '../common';
+import { CustomIcon, ErrorFallback } from '../common';
+import { withErrorBoundary } from 'react-error-boundary';
 
 const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) => {
   return (
@@ -20,8 +21,7 @@ const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) 
         />
         <label
           htmlFor={name}
-          className="absolute-y-center clr-gray-500 pointer-events-none left-2 select-none px-2 duration-300 "
-        >
+          className="absolute-y-center clr-gray-500 pointer-events-none left-2 select-none px-2 duration-300 ">
           {label}
         </label>
       </div>
@@ -32,4 +32,8 @@ const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) 
   );
 };
 
-export { Input };
+const InputWithErrorBoundary = withErrorBoundary(Input, {
+  FallbackComponent: ErrorFallback
+});
+
+export { InputWithErrorBoundary };
