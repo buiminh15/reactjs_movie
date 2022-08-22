@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DefaultLayout from './components/layout/DefaultLayout';
 import { routes } from './routes';
 import { ToastContainer } from 'react-toastify';
-
+import second from './';
+import { Spinner } from './components/common';
 function App() {
   return (
     <Router>
@@ -14,7 +15,8 @@ function App() {
               {...rest}
               key={id}
               element={
-                <Suspense fallback={<div className="absolute-center loader"></div>}>
+                <Suspense
+                  fallback={<Spinner spinnerStyle="absolute-center inset-0 w-screen h-screen" />}>
                   {Element}
                 </Suspense>
               }
