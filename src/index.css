@@ -52,7 +52,7 @@ html {
 }
 
 .clr-gray-500 {
-  color: #989898;
+  color: hsl(0, 0%, 60%);
 }
 
 .clr-blue-500 {
@@ -65,6 +65,21 @@ html {
 
 .border-blue {
   border-color: #5179ff;
+}
+.border-gray {
+  border-color: hsl(0, 0%, 30%);
+}
+
+/* LOADER */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
 
 /* CUSTOM SCROLLBAR*/
@@ -93,7 +108,7 @@ input:focus ~ label,
 input:not(:placeholder-shown) ~ label {
   @apply transform;
   @apply scale-90;
-  @apply -top-6 -left-3;
+  @apply -top-6 -left-2;
 }
 
 /* CUSTOM INPUT BACKGROUND WHEN AUTOFILL FORM */

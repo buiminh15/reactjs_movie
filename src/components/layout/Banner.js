@@ -10,12 +10,12 @@ function Banner() {
           <button className="font-medium text-white transition duration-300 after:absolute after:bottom-0 after:left-[13%] after:h-[3px] after:w-5 after:bg-white hover:text-white">
             TV Show
           </button>
-          <button className="font-medium text-white transition duration-300 after:absolute after:bottom-0 after:left-[13%] after:h-[3px] after:w-5 after:bg-white hover:text-white">
+          <button className="clr-gray-500 font-medium transition duration-300 after:absolute after:bottom-0 after:left-[13%] after:h-[3px] after:w-5 after:bg-white hover:text-white">
             Movie
           </button>
         </div>
 
-        <div className="flex items-center gap-6 text-white">
+        <div className="clr-gray-500 flex items-center gap-6">
           <p>Anonymous</p>
           <img
             src={defaultAvatar}

@@ -14,7 +14,7 @@ function App() {
               {...rest}
               key={id}
               element={
-                <Suspense fallback={<div className="text-white">Loading...</div>}>
+                <Suspense fallback={<div className="absolute-center loader"></div>}>
                   {Element}
                 </Suspense>
               }

@@ -19,14 +19,25 @@ function MenuItem({ icon, title, path, auth }) {
     navigate(path);
   };
   return (
-    <li className="mb-3" onClick={handleNavigate}>
+    <li className="group mb-3" onClick={handleNavigate}>
       <div
         className={`border-blue flex h-8 w-full cursor-pointer gap-3 ${
           pathname === path ? 'clr-blue-500 border-r-4' : 'clr-gray'
         }`}
       >
-        <CustomIcon element={icon} providerStyle={{ className: `text-2xl` }} />
-        <span className="text-lg capitalize">{title}</span>
+        <CustomIcon
+          element={icon}
+          providerStyle={{
+            className: `text-2xl ${pathname === path ? '' : 'group-hover:text-white'} duration-300`
+          }}
+        />
+        <span
+          className={`text-lg capitalize  duration-300 ${
+            pathname === path ? '' : 'group-hover:text-white'
+          }`}
+        >
+          {title}
+        </span>
       </div>
     </li>
   );

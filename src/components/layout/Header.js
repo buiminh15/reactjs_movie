@@ -9,7 +9,7 @@ function Header() {
 
   useOnClickOutside(ref, () => setOpenMenu(false));
   return (
-    <div className="my-5 h-10">
+    <div className="my-5 h-10 md:hidden">
       <div className="flex items-center justify-between">
         <Logo />
         <CustomIcon
