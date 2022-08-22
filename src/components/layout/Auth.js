@@ -20,9 +20,74 @@ const SignupSchema = yup.object().shape({
     .min(8, 'Password is too short - should be 8 chars minimum.')
     .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
 });
+const SigninSchema = yup.object().shape({
+  email: yup.string().email().required('No email provided'),
+  password: yup
+    .string()
+    .required('No password provided')
+    .min(8, 'Password is too short - should be 8 chars minimum.')
+    .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
+});
 
-const SignIn = () => {
-  return <div>Sign in</div>;
+const SignIn = ({ handleAuthPage }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(SigninSchema)
+  });
+  const onSubmit = (data) => {
+    console.log('tete:: ', data);
+  };
+  return (
+    <div className="max-w-[600px] w-full">
+      <h2 className="clr-blue-500 my-4 text-center text-4xl font-extrabold capitalize">
+        sign in to moonee
+      </h2>
+      <div className="flex items-center justify-center gap-3">
+        <SocialIcon icon={<FcGoogle />} />
+        <SocialIcon icon={<FaFacebookF />} />
+      </div>
+      <p className="clr-gray-500 my-5 text-center">or use your email account:</p>
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+        <Row colNum={1} rowStyles="mt-8">
+          <Input
+            label="Email"
+            name="email"
+            type="email"
+            register={register}
+            icon={<FiMail />}
+            errors={errors}
+          />
+        </Row>
+
+        <Row colNum={1} rowStyles="mt-8">
+          <Input
+            label="Password"
+            name="password"
+            type="password"
+            register={register}
+            icon={<RiLockPasswordLine />}
+            errors={errors}
+          />
+        </Row>
+        <input
+          type="submit"
+          value="register"
+          className="mt-6 w-full cursor-pointer rounded bg-blue-500 px-4 py-2 uppercase text-white duration-300 hover:bg-blue-600"
+        />
+      </form>
+      <p className="clr-gray mt-7 text-center">
+        Not a member?{' '}
+        <span
+          className="cursor-pointer border-b-2 border-blue-600 capitalize text-blue-600"
+          onClick={() => handleAuthPage(false)}>
+          sign up
+        </span>
+      </p>
+    </div>
+  );
 };
 
 const SignUp = ({ handleAuthPage }) => {
