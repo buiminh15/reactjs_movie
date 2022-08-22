@@ -1,5 +1,4 @@
-import { CustomIcon, ErrorFallback } from '../common';
-import { withErrorBoundary } from 'react-error-boundary';
+import { CustomIcon } from '../common';
 
 const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) => {
   return (
@@ -32,8 +31,4 @@ const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) 
   );
 };
 
-const InputWithErrorBoundary = withErrorBoundary(Input, {
-  FallbackComponent: ErrorFallback
-});
-
-export { InputWithErrorBoundary };
+export { Input };

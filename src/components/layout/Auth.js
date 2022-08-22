@@ -9,7 +9,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
-import { InputWithErrorBoundary } from '../styles/Input';
 
 const SignupSchema = yup.object().shape({
   firstName: yup.string().required('Required'),
@@ -53,11 +52,11 @@ const SignIn = ({ handleAuthPage }) => {
       <p className="clr-gray-500 my-5 text-center">or use your email account:</p>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
         <Row colNum={1} rowStyles="mt-8">
-          <InputWithErrorBoundary label="Email" name="email" register={register} icon={<FiMail />} errors={errors} />
+          <Input label="Email" name="email" register={register} icon={<FiMail />} errors={errors} />
         </Row>
 
         <Row colNum={1} rowStyles="mt-8">
-          <InputWithErrorBoundary
+          <Input
             label="Password"
             name="password"
             type="password"
@@ -109,14 +108,14 @@ const SignUp = ({ handleAuthPage }) => {
       <p className="clr-gray-500 my-5 text-center">or use your email account:</p>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
         <Row>
-          <InputWithErrorBoundary
+          <Input
             label="First name"
             name="firstName"
             register={register}
             icon={<FaRegUserCircle />}
             errors={errors}
           />
-          <InputWithErrorBoundary
+          <Input
             label="Last name"
             name="lastName"
             register={register}
@@ -125,7 +124,7 @@ const SignUp = ({ handleAuthPage }) => {
           />
         </Row>
         <Row colNum={1} rowStyles="mt-8">
-          <InputWithErrorBoundary
+          <Input
             label="Email"
             name="email"
             type="email"
@@ -136,7 +135,7 @@ const SignUp = ({ handleAuthPage }) => {
         </Row>
 
         <Row colNum={1} rowStyles="mt-8">
-          <InputWithErrorBoundary
+          <Input
             label="Password"
             name="password"
             type="password"
