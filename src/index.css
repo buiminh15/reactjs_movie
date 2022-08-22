@@ -105,7 +105,8 @@ select:focus {
 
 /* INPUT */
 input:focus ~ label,
-input:not(:placeholder-shown) ~ label {
+input:not(:placeholder-shown) ~ label,
+input:-webkit-autofill ~ label {
   @apply transform;
   @apply scale-90;
   @apply -top-6 -left-2;
@@ -120,5 +121,5 @@ input:-webkit-autofill:active {
 }
 
 input:-webkit-autofill {
-  -webkit-text-fill-color: #989898 !important;
+  -webkit-text-fill-color: white !important;
 }
