@@ -20,7 +20,8 @@ const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) 
         />
         <label
           htmlFor={name}
-          className="absolute-y-center clr-gray-500 pointer-events-none left-2 select-none px-2 duration-300 ">
+          className="absolute-y-center clr-gray-500 pointer-events-none left-2 select-none px-2 duration-300 "
+        >
           {label}
         </label>
       </div>

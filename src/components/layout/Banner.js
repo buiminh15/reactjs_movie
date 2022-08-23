@@ -11,14 +11,16 @@ function Banner({ currentTab, handleTab }) {
             onClick={() => handleTab('tv')}
             className={`font-medium duration-100 after:left-[13%] hover:text-white ${
               currentTab === 'tv' ? activeStyle : 'clr-gray-500'
-            }`}>
+            }`}
+          >
             TV Show
           </button>
           <button
             onClick={() => handleTab('movie')}
             className={`font-medium duration-100 after:left-[78%] hover:text-white ${
               currentTab === 'movie' ? activeStyle : 'clr-gray-500'
-            }`}>
+            }`}
+          >
             Movie
           </button>
         </div>

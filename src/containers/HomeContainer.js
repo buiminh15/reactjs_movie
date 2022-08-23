@@ -25,7 +25,7 @@ function HomeContainer() {
     }
   );
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="bg-primary min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-12">
         <LeftBlock />
         <div className="col-span-8 p-3">

@@ -5,6 +5,7 @@ import { routes } from './routes';
 import { ToastContainer } from 'react-toastify';
 import { Spinner } from './components/common';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,8 @@ function App() {
                 key={id}
                 element={
                   <Suspense
-                    fallback={<Spinner spinnerStyle="absolute-center inset-0 w-screen h-screen" />}>
+                    fallback={<Spinner spinnerStyle="absolute-center inset-0 w-screen h-screen" />}
+                  >
                     {Element}
                   </Suspense>
                 }
@@ -40,6 +42,7 @@ function App() {
           pauseOnHover
         />
       </Router>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

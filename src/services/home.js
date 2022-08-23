@@ -48,8 +48,8 @@ export const getMovieBannerInfo = async (movies) => {
 
   const genres = detailResponses.map((item) => item.genres.filter((_, index) => index < 3));
 
-  return genres.map((genre, index ) => ({
+  return genres.map((genre, index) => ({
     genre,
     translation: translations[index]
-  }))
+  }));
 };

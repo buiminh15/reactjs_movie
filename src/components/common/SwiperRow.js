@@ -40,7 +40,8 @@ function SwiperRow({ data }) {
       slidesPerView={5}
       spaceBetween={20}
       loop={true}
-      className="!static h-full w-[1000px] !p-2">
+      className="!static h-full w-[1000px] !p-2"
+    >
       <div className="absolute top-1/2 left-2 z-10 -translate-y-1/2">
         <SwiperButtonPrev>
           <CustomIcon
