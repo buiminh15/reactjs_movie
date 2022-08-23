@@ -122,4 +122,5 @@ input:-webkit-autofill:active {
 
 input:-webkit-autofill {
   -webkit-text-fill-color: white !important;
+  caret-color: white;
 }

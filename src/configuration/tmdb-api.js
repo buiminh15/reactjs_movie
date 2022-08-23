@@ -1,9 +1,13 @@
 import axios from 'axios';
+import { API_URL } from '../utils/constants';
 
-const TYPE_TOKEN = 'bearer';
-const BASE_URL = 'https://api.themoviedb.org/3/';
 const APIGateway = axios.create({
-  baseURL: `${BASE_URL}`,
+  baseURL: API_URL,
+  params: {
+    // eslint-disable-next-line no-undef
+    // api_key: process.env.REACT_APP_API_KEY
+    api_key: '2071d391774826fe0fa07a2215d3dadb'
+  },
   headers: {
     'Content-type': 'application/json'
   }

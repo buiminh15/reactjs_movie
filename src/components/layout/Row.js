@@ -1,7 +1,7 @@
 import React from 'react';
 import { SwiperRow } from '../common';
 
-function Row({ title = 'test', data }) {
+function Row({ title, data }) {
   return (
     <div className="overflow-hidden px-[2vw]">
       <h2 className="mb-3 text-2xl capitalize tracking-wide text-white">{title}</h2>
