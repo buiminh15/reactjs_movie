@@ -1,7 +1,7 @@
 import React from 'react';
 import { defaultAvatar } from '../../utils/images';
-import { SwiperBanner } from '../common';
-function Banner({ currentTab, handleTab, bannerData }) {
+
+function Tabs({ currentTab, handleTab }) {
   const activeStyle = `text-white after:bottom-0 after:h-[3px] after:w-5 after:bg-white after:absolute`;
   return (
     <div className="flex-grow px-[4vw] pt-0 pb-7 md:px-[2vw] md:pt-7">
@@ -36,11 +36,11 @@ function Banner({ currentTab, handleTab, bannerData }) {
         </div>
       </div>
 
-      <div className="tw-banner-slider relative mt-6 h-0 pb-[55%] md:pb-[45%]">
+      {/* <div className="relative mt-6 h-0 pb-[55%] md:pb-[45%]">
         <SwiperBanner bannerData={bannerData}/>
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export default Banner;
+export default Tabs;

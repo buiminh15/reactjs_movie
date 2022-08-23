@@ -1,6 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
-import { LeftBlock, RightBlock, Header, Banner, MainHomeFilms } from '../components';
+import Header from '../components/Header/Header';
+import MainHomeFilms from '../components/Home/MainHomeFilms';
+import LeftBlock from '../components/LeftBlock/LeftBlock';
+import RightBlock from '../components/RightBlock/RightBlock';
+import Tabs from '../components/Tabs/Tabs';
 import { getHomeMovies, getHomeTvShow, getMovieBannerInfo, getTvBannerInfo } from '../services/home';
 import { mergeArrays } from '../utils/functions';
 
@@ -62,7 +66,7 @@ function HomeContainer() {
         <LeftBlock />
         <div className="col-span-8 p-3">
           <Header />
-          <Banner handleTab={setCurrentTab} currentTab={currentTab} bannerData={bannerData}/>
+          <Tabs handleTab={setCurrentTab} currentTab={currentTab}/>
           {currentTab === 'movie' && <>
           <MainHomeFilms dataMovie={dataMovie} />
           </>}

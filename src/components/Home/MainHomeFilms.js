@@ -1,5 +1,5 @@
 import React from 'react';
-import Row from './Row';
+import SliderSection from '../Slider/SliderSection';
 
 function MainHomeFilms({ dataMovie }) {
   return (
@@ -7,7 +7,7 @@ function MainHomeFilms({ dataMovie }) {
       {dataMovie &&
         Object.entries(dataMovie).filter(data => data[0] !== 'Trending').map((section, index) => (
           <li key={index}>
-            <Row title={section?.[0]} data={section?.[1]} />
+            <SliderSection title={section?.[0]} data={section?.[1]} />
           </li>
         ))}
     </ul>

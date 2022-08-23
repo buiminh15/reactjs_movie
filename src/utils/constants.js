@@ -12,3 +12,7 @@ export const SUPPORTED_QUERY = {
   from: [],
   to: []
 };
+
+export const TOAST_MESSAGES = {
+  AUTH_INFO: 'You need to login to use this feature'
+};

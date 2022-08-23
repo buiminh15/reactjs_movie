@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SignIn, SignUp } from '../components/layout/Auth';
+import { SignIn, SignUp } from '../components/Auth/Auth';
 import { videoBg } from '../utils/images';
 
 function AuthContainer() {

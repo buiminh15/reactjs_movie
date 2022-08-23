@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { TOAST_MESSAGES } from '../../constants';
+import { TOAST_MESSAGES } from '../../utils/constants';
 import { userStorage } from '../../utils/storage';
 import { CustomIcon } from '../common';
 

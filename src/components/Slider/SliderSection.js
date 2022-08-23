@@ -1,7 +1,7 @@
 import React from 'react';
-import { SwiperRow } from '../common';
+import SwiperRow from './SwiperRow';
 
-function Row({ title, data }) {
+function SliderSection({ title, data }) {
   return (
     <div className="overflow-hidden px-[2vw]">
       <h2 className="mb-3 text-2xl capitalize tracking-wide text-white">{title}</h2>
@@ -12,4 +12,4 @@ function Row({ title, data }) {
   );
 }
 
-export default Row;
+export default SliderSection;

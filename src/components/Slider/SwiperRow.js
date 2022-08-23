@@ -7,8 +7,8 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IMAGE_URL } from '../../utils/constants';
 import { SwiperButtonNext, SwiperButtonPrev } from '../styles';
-import CustomIcon from './CustomIcon';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { CustomIcon } from '../common';
 
 const RowImage = ({ link, imageLink, movieTitle, rating }) => {
   return (

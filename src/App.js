@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import DefaultLayout from './components/layout/DefaultLayout';
 import { routes } from './routes';
 import { ToastContainer } from 'react-toastify';
 import { Spinner } from './components/common';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import DefaultLayout from './components/DefaultLayout/DefaultLayout'
 
 const queryClient = new QueryClient();
 

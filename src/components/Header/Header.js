@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { CustomIcon, Logo } from '../common';
 import { FiMenu } from 'react-icons/fi';
 import { useOnClickOutside } from '../../hooks';
-import SideMenu from './SideMenu';
+import { CustomIcon, Logo } from '../common';
+import SideMenu from '../LeftBlock/SideMenu';
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   const ref = useRef();
