@@ -1,21 +1,39 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import { MainComponent, LeftBlock, RightBlock } from '../components';
-import { getHomeMovies } from '../services/home';
+import React, { useState } from 'react';
+import { LeftBlock, RightBlock, Header, Banner, MainHomeFilms } from '../components';
+import { getHomeMovies, getMovieBannerInfo } from '../services/home';
 
 function HomeContainer() {
+  const [currentTab, setCurrentTab] = useState('tv');
   const {
     data: dataMovie,
-    isLoading: isLoadingMoviem,
+    isLoading: isLoadingMovie,
     isError: isErrorMovie,
     error: errorMovie
   } = useQuery(['home-movies'], getHomeMovies);
-  
+
+  const {
+    data: dataMovieDetail,
+    isLoading: isLoadingMovieDetail,
+    isError: isErrorMovieDetail,
+    error: errorMovieDetail
+  } = useQuery(
+    ['detailMovies', dataMovie?.Trending],
+    () => getMovieBannerInfo(dataMovie?.Trending),
+    {
+      enabled: !!dataMovie?.Trending
+    }
+  );
   return (
-    <div className="min-h-screen bg-[#1c1c1e]">
+    <div className="min-h-screen bg-primary">
       <div className="grid grid-cols-1 md:grid-cols-12">
         <LeftBlock />
-        <MainComponent dataMovie={dataMovie}/>
+        <div className="col-span-8 p-3">
+          <Header />
+          <Banner handleTab={setCurrentTab} currentTab={currentTab} />
+          {currentTab === 'movie' && <MainHomeFilms dataMovie={dataMovie} />}
+          {currentTab === 'tv' && <MainHomeFilms dataMovie={dataMovie} />}
+        </div>
         <RightBlock />
       </div>
     </div>

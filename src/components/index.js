@@ -1,8 +1,8 @@
 import LeftBlock from './layout/LeftBlock';
-import MainComponent from './layout/MainComponent';
+import MainHomeFilms from './layout/MainHomeFilms';
 import RightBlock from './layout/RightBlock';
 import Banner from './layout/Banner';
 import Header from './layout/Header';
 import Row from './layout/Row';
 
-export { RightBlock, LeftBlock, MainComponent, Banner, Header, Row };
+export { RightBlock, LeftBlock, MainHomeFilms, Banner, Header, Row };

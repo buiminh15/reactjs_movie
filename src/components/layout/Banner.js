@@ -1,16 +1,24 @@
 import React from 'react';
 import { defaultAvatar } from '../../utils/images';
 import { SwiperBanner } from '../common';
-
-function Banner() {
+function Banner({ currentTab, handleTab }) {
+  const activeStyle = `text-white after:bottom-0 after:h-[3px] after:w-5 after:bg-white after:absolute`;
   return (
-    <div className="border-gray-darken flex-grow px-[4vw] pt-0 pb-7 md:px-[2vw] md:pt-7">
+    <div className="flex-grow px-[4vw] pt-0 pb-7 md:px-[2vw] md:pt-7">
       <div className="flex items-center justify-between">
-        <div className="border-gray-darken relative inline-flex gap-[40px] border-b pb-[14px]">
-          <button className="font-medium text-white transition duration-300 after:absolute after:bottom-0 after:left-[13%] after:h-[3px] after:w-5 after:bg-white hover:text-white">
+        <div className="border-gray relative inline-flex gap-[40px] border-b pb-[14px]">
+          <button
+            onClick={() => handleTab('tv')}
+            className={`font-medium duration-100 after:left-[13%] hover:text-white ${
+              currentTab === 'tv' ? activeStyle : 'clr-gray-500'
+            }`}>
             TV Show
           </button>
-          <button className="clr-gray-500 font-medium transition duration-300 after:absolute after:bottom-0 after:left-[13%] after:h-[3px] after:w-5 after:bg-white hover:text-white">
+          <button
+            onClick={() => handleTab('movie')}
+            className={`font-medium duration-100 after:left-[78%] hover:text-white ${
+              currentTab === 'movie' ? activeStyle : 'clr-gray-500'
+            }`}>
             Movie
           </button>
         </div>

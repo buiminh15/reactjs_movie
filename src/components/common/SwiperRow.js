@@ -19,15 +19,10 @@ const RowImage = ({ link, imageLink, movieTitle, rating }) => {
           <CustomIcon element={<FiStar />} providerStyle={{ className: 'text-sm ' }} />
         </span>
         <div className="h-[85%] overflow-hidden">
-          <LazyLoadImage
-            alt="row"
-            src={imageLink}
-            className="relative z-0 w-full rounded-tl rounded-tr object-cover"
-            effect="blur"
-          />
+          <LazyLoadImage alt="row" src={imageLink} className="object-cover" effect="blur" />
         </div>
-        <div className="px-2 h-[15%]">
-          <p className="clr-gray leading-10 text-center truncate text-sm capitalize duration-100 group-hover:text-white">
+        <div className="h-[15%] px-2">
+          <p className="clr-gray truncate text-center text-sm capitalize leading-10 duration-100 group-hover:text-white">
             {movieTitle}
           </p>
         </div>
