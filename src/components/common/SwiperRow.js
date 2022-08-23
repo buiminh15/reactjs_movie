@@ -6,25 +6,30 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IMAGE_URL } from '../../utils/constants';
-import { Test, Test1, Test2 } from '../../utils/images';
 import { SwiperButtonNext, SwiperButtonPrev } from '../styles';
 import CustomIcon from './CustomIcon';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const RowImage = ({ link, imageLink, movieTitle, rating }) => {
-  console.log(imageLink)
   return (
     <Link to={link}>
-      <div className="bg-dark group h-[262px] max-w-[175px] overflow-hidden rounded duration-300 hover:scale-105 hover:brightness-110">
-        <span className="absolute top-4 left-2 flex items-center gap-1 rounded bg-blue-500 p-1 text-sm text-white">
-          {rating}
+      <div className="bg-dark group relative h-[262px] max-w-[175px] overflow-hidden rounded duration-300 hover:scale-105 ">
+        <span className="absolute top-4 left-2 z-10 flex items-center gap-1 rounded bg-blue-500 p-1 text-sm text-white">
+          {rating.toFixed(1)}
           <CustomIcon element={<FiStar />} providerStyle={{ className: 'text-sm ' }} />
         </span>
-
-        <img src={imageLink} alt="row" className="h-[85%] w-full rounded-tl rounded-tr object-cover" />
-        <div className="grid h-[15%] place-items-center">
-          <h3 className="clr-gray text-center capitalize duration-100 group-hover:text-white">
+        <div className="h-[85%] overflow-hidden">
+          <LazyLoadImage
+            alt="row"
+            src={imageLink}
+            className="relative z-0 w-full rounded-tl rounded-tr object-cover"
+            effect="blur"
+          />
+        </div>
+        <div className="px-2 h-[15%]">
+          <p className="clr-gray leading-10 text-center truncate text-sm capitalize duration-100 group-hover:text-white">
             {movieTitle}
-          </h3>
+          </p>
         </div>
       </div>
     </Link>
@@ -57,9 +62,14 @@ function SwiperRow({ data }) {
           />
         </SwiperButtonNext>
       </div>
-      {data?.map(({title, id, vote_average, poster_path}) => (
+      {data?.map(({ title, id, vote_average, poster_path }) => (
         <SwiperSlide style={{ width: '100%' }} key={id}>
-          <RowImage link={'#'} imageLink={`${IMAGE_URL}/w500${poster_path}`} movieTitle={title} rating={vote_average} />
+          <RowImage
+            link={'#'}
+            imageLink={`${IMAGE_URL}/w500${poster_path}`}
+            movieTitle={title}
+            rating={vote_average}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

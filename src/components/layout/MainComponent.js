@@ -2,7 +2,6 @@ import React from 'react';
 import Banner from './Banner';
 import Header from './Header';
 import Row from './Row';
-import Rows from './Rows';
 
 function MainComponent({ dataMovie }) {
   return (

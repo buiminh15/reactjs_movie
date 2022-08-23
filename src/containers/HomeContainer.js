@@ -10,7 +10,6 @@ function HomeContainer() {
     isError: isErrorMovie,
     error: errorMovie
   } = useQuery(['home-movies'], getHomeMovies);
-  console.log("data: ", dataMovie)
   
   return (
     <div className="min-h-screen bg-[#1c1c1e]">
