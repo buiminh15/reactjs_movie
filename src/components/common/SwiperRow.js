@@ -32,6 +32,7 @@ const RowImage = ({ link, imageLink, movieTitle, rating }) => {
 };
 
 function SwiperRow({ data }) {
+  console.log("data::: ", data)
   return (
     <Swiper
       lazy={true}
@@ -58,12 +59,12 @@ function SwiperRow({ data }) {
           />
         </SwiperButtonNext>
       </div>
-      {data?.map(({ title, id, vote_average, poster_path }) => (
+      {data?.map(({ title, id, vote_average, poster_path, name }) => (
         <SwiperSlide style={{ width: '100%' }} key={id}>
           <RowImage
             link={'#'}
             imageLink={`${IMAGE_URL}/w500${poster_path}`}
-            movieTitle={title}
+            movieTitle={title || name}
             rating={vote_average}
           />
         </SwiperSlide>

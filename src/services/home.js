@@ -53,3 +53,30 @@ export const getMovieBannerInfo = async (movies) => {
     translation: translations[index]
   }));
 };
+
+// tv tab
+
+export const getHomeTvShow = async () => {
+  const endpoints = {
+    Trending: '/trending/tv/day',
+    Popular: '/tv/popular',
+    'Top Rated': '/tv/top_rated',
+    Hot: '/trending/tv/day?page=2',
+    'On Air': '/tv/on_the_air'
+  }
+
+  const responses = await Promise.all(
+    Object.entries(endpoints).map((endpoint) => APIGateway.get(endpoint[1]))
+  );
+
+  const data = responses.reduce((final, current, index) => {
+    final[Object.entries(endpoints)[index][0]] = current.results.map((item) => ({
+      ...item,
+      media_type: 'tv'
+    }));
+
+    return final;
+  }, {});
+
+  return data;
+}

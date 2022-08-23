@@ -5,7 +5,7 @@ function MainHomeFilms({ dataMovie }) {
   return (
     <ul className="mt-6 flex flex-col gap-10">
       {dataMovie &&
-        Object.entries(dataMovie).map((section, index) => (
+        Object.entries(dataMovie).filter(data => data[0] !== 'Trending').map((section, index) => (
           <li key={index}>
             <Row title={section?.[0]} data={section?.[1]} />
           </li>
