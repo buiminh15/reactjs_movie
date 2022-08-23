@@ -1,6 +1,6 @@
 import React from 'react';
 import { SIDE_MENU } from '../../routes';
-import MenuItem from '../styles/MenuItem';
+import MenuItem from '../common/SideMenuItem';
 
 function SideMenu() {
   return (

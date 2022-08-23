@@ -35,10 +35,6 @@ function Tabs({ currentTab, handleTab }) {
           />
         </div>
       </div>
-
-      {/* <div className="relative mt-6 h-0 pb-[55%] md:pb-[45%]">
-        <SwiperBanner bannerData={bannerData}/>
-      </div> */}
     </div>
   );
 }

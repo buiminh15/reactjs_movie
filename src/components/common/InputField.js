@@ -1,6 +1,6 @@
-import { CustomIcon } from '../common';
+import { CustomIcon } from '.';
 
-const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) => {
+const InputField = ({ label, name, type = 'text', icon, register, errors, ...rest }) => {
   return (
     <div className="relative text-white">
       <div>
@@ -32,4 +32,4 @@ const Input = ({ label, name, type = 'text', icon, register, errors, ...rest }) 
   );
 };
 
-export { Input };
+export { InputField };

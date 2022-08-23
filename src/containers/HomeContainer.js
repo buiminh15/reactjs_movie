@@ -5,7 +5,13 @@ import MainHomeFilms from '../components/Home/MainHomeFilms';
 import LeftBlock from '../components/LeftBlock/LeftBlock';
 import RightBlock from '../components/RightBlock/RightBlock';
 import Tabs from '../components/Tabs/Tabs';
-import { getHomeMovies, getHomeTvShow, getMovieBannerInfo, getTvBannerInfo } from '../services/home';
+import SwiperBanner from '../components/Slider/SwiperBanner'
+import {
+  getHomeMovies,
+  getHomeTvShow,
+  getMovieBannerInfo,
+  getTvBannerInfo
+} from '../services/home';
 import { mergeArrays } from '../utils/functions';
 
 function HomeContainer() {
@@ -43,22 +49,18 @@ function HomeContainer() {
     isLoading: isLoadingTvDetail,
     isError: isErrorTvDetail,
     error: errorTvDetail
-  } = useQuery(
-    ['detailTv', dataTv?.Trending],
-    () => getTvBannerInfo(dataTv?.Trending),
-    {
-      enabled: !!dataTv?.Trending
-    }
-  );
+  } = useQuery(['detailTv', dataTv?.Trending], () => getTvBannerInfo(dataTv?.Trending), {
+    enabled: !!dataTv?.Trending
+  });
 
   useEffect(() => {
     if (currentTab === 'tv') {
-      setBannerData(mergeArrays(dataTvDetail, dataTv?.Trending))
+      setBannerData(mergeArrays(dataTvDetail, dataTv?.Trending));
     }
     if (currentTab === 'movie') {
-      setBannerData(mergeArrays(dataMovieDetail, dataMovie?.Trending))
+      setBannerData(mergeArrays(dataMovieDetail, dataMovie?.Trending));
     }
-  }, [currentTab])
+  }, [currentTab]);
 
   return (
     <div className="bg-primary min-h-screen">
@@ -66,10 +68,15 @@ function HomeContainer() {
         <LeftBlock />
         <div className="col-span-8 p-3">
           <Header />
-          <Tabs handleTab={setCurrentTab} currentTab={currentTab}/>
-          {currentTab === 'movie' && <>
-          <MainHomeFilms dataMovie={dataMovie} />
-          </>}
+          <Tabs handleTab={setCurrentTab} currentTab={currentTab} />
+          <div className="relative mt-6 h-0 pb-[55%] md:pb-[45%]">
+            <SwiperBanner bannerData={bannerData} />
+          </div>
+          {currentTab === 'movie' && (
+            <>
+              <MainHomeFilms dataMovie={dataMovie} />
+            </>
+          )}
           {currentTab === 'tv' && <MainHomeFilms dataMovie={dataTv} />}
         </div>
         <RightBlock />

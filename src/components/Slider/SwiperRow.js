@@ -6,9 +6,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IMAGE_URL } from '../../utils/constants';
-import { SwiperButtonNext, SwiperButtonPrev } from '../styles';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { CustomIcon } from '../common';
+import { CustomIcon, SwiperButtonNext, SwiperButtonPrev } from '../common';
 
 const RowImage = ({ link, imageLink, movieTitle, rating }) => {
   return (
@@ -18,10 +17,10 @@ const RowImage = ({ link, imageLink, movieTitle, rating }) => {
           {rating.toFixed(1)}
           <CustomIcon element={<FiStar />} providerStyle={{ className: 'text-sm ' }} />
         </span>
-        <div className="h-[85%] overflow-hidden">
-          <LazyLoadImage alt="row" src={imageLink} className="object-cover" effect="blur" />
+        <div className="h-[222px]">
+          <LazyLoadImage alt="row" src={imageLink} className="object-cover max-h-full max-w-full w-full h-full" effect="blur" />
         </div>
-        <div className="h-[15%] px-2">
+        <div className=" px-2">
           <p className="clr-gray truncate text-center text-sm capitalize leading-10 duration-100 group-hover:text-white">
             {movieTitle}
           </p>
@@ -32,7 +31,6 @@ const RowImage = ({ link, imageLink, movieTitle, rating }) => {
 };
 
 function SwiperRow({ data }) {
-  console.log("data::: ", data)
   return (
     <Swiper
       lazy={true}

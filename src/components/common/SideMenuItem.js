@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { TOAST_MESSAGES } from '../../utils/constants';
 import { userStorage } from '../../utils/storage';
-import { CustomIcon } from '../common';
+import { CustomIcon } from '.';
 
 function MenuItem({ icon, title, path, auth }) {
   const { pathname } = useLocation();

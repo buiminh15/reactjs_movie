@@ -4,3 +4,7 @@ export { default as Row } from './Row';
 export { default as Spinner } from './Spinner';
 export { default as Accordion } from './Accordion';
 export { default as ErrorFallback } from './ErrorFallback';
+export { InputField } from './InputField';
+export { SwiperButtonNext, SwiperButtonPrev } from './SwiperNavigation';
+export { SocialIcon } from './SocialIcon';
+export { Tag } from './Tag';

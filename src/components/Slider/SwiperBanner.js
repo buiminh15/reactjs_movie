@@ -7,8 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IMAGE_URL } from '../../utils/constants';
-import { SwiperButtonNext, SwiperButtonPrev } from '../styles';
-import CustomIcon from './CustomIcon';
+import { CustomIcon, SwiperButtonNext, SwiperButtonPrev } from '../common';
 
 const BannerImage = ({ movieLink, imgUrl, title, subTitle, releaseDate }) => {
   return (
