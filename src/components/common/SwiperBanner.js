@@ -10,26 +10,20 @@ import { IMAGE_URL } from '../../utils/constants';
 import { SwiperButtonNext, SwiperButtonPrev } from '../styles';
 import CustomIcon from './CustomIcon';
 
-const BannerImage = ({
-  movieLink,
-  imgUrl,
-  title = 'Westworld',
-  subTitle = 'Thế Giới Viễn Tây',
-  releaseDate = '1111'
-}) => {
+const BannerImage = ({ movieLink, imgUrl, title, subTitle, releaseDate }) => {
   return (
     <Link to={movieLink}>
       <div className="group relative h-full w-full">
         <div className="overflow-hidden">
-          <LazyLoadImage src={imgUrl} alt="banner image" className="object-fit w-full h-full" effect="blur"/>
+          <LazyLoadImage src={imgUrl} alt="banner image" className="object-fit" effect="blur" wrapperClassName='object-contain object-bottom'/>
         </div>
         <div className="absolute top-0 h-full w-full bg-gradient-to-r from-[#000]"></div>
         <div className="absolute top-[50%] left-[5%] max-w-[200px] -translate-y-1/2 md:max-w-md">
-          <h2 className="text-primary md:tw-multiline-ellipsis-2 tw-multiline-ellipsis-3  text-xl font-black tracking-wide text-blue-600 brightness-125 md:text-5xl">
+          <h2 className="text-primary text-xl font-black tracking-wide text-blue-600 brightness-125 md:text-3xl">
             {title}
           </h2>
           <div>
-            <p className="mt-1 text-base font-semibold text-white md:text-2xl">{subTitle}</p>
+            <p className="mt-1 text-base font-semibold text-white md:text-xl">{subTitle}</p>
             <p className="mt-1 text-gray-400">{releaseDate}</p>
           </div>
         </div>
@@ -84,9 +78,15 @@ function SwiperBanner({ bannerData }) {
         navigation={true}
         modules={[Lazy, Navigation, Autoplay]}
         className="h-full w-full">
-        {bannerData?.map(({genre, translation, title, poster_path, release_date}, i) => (
+        {bannerData?.map(({ genre, translation, title, poster_path, release_date }, i) => (
           <SwiperSlide style={{ width: '100%', position: 'relative' }} key={i}>
-            <BannerImage movieLink={'#'} imgUrl={`${IMAGE_URL}/w500${poster_path}`} title={title} subTitle={translation[0]} releaseDate={release_date}/>
+            <BannerImage
+              movieLink={'#'}
+              imgUrl={`${IMAGE_URL}/w500${poster_path}`}
+              title={title}
+              subTitle={translation[0]}
+              releaseDate={release_date}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

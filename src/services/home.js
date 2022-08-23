@@ -80,3 +80,32 @@ export const getHomeTvShow = async () => {
 
   return data;
 }
+
+export const getTvBannerInfo = async (tvs) => {
+  const detailResponses = await Promise.all(
+    tvs.map((tv) => APIGateway.get(`/tv/${tv.id}`))
+  );
+
+  const translationResponses = await Promise.all(
+    tvs.map((tv) => APIGateway.get(`/tv/${tv.id}/translations`))
+  );
+
+  const translations = translationResponses.map((item) =>
+    item.translations
+      .filter((translation) => ['vi', 'fr', 'ja', 'pt', 'ru', 'es'].includes(translation.iso_639_1))
+      .reduce((acc, element) => {
+        if (element.iso_639_1 === 'vi') {
+          return [element, ...acc];
+        }
+        return [...acc, element];
+      }, [])
+      .map((translation) => translation.data.title)
+  );
+
+  const genres = detailResponses.map((item) => item.genres.filter((_, index) => index < 3));
+
+  return genres.map((genre, index) => ({
+    genre,
+    translation: translations[index]
+  }));
+};
